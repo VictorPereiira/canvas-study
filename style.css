@@ -12,5 +12,10 @@ body {
 }
 
 #screen {
-    border: 1px solid #c4c4c4;
+    border: 10px solid #c4c4c4;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+    image-rendering: -moz-crisp-edges;
+    width: 400px;
+    height: 400px;
 }
