@@ -1,5 +1,6 @@
 const screen = document.getElementById('screen')
 const context = screen.getContext('2d');
+const currentPlayerId = 'player1'
 
 const game = {
     players: {
@@ -8,6 +9,33 @@ const game = {
     },
     fruits: {
         'fruit1': { x: 3, y: 1 }
+    }
+}
+
+document.addEventListener('keydown', handleKeydown)
+
+function handleKeydown(event) {
+    const keyPressed = event.key
+    const player = game.players[currentPlayerId]
+
+    if (keyPressed === 'ArrowUp' && player.y - 1 >= 0) {
+        console.log('Up');
+        player.y -= 1
+    }
+
+    if (keyPressed === 'ArrowRight' && player.x + 1 < screen.width) {
+        console.log('Right');
+        player.x += 1
+    }
+
+    if (keyPressed === 'ArrowDown' && player.y + 1 < screen.height) {
+        console.log('Down');
+        player.y += 1
+    }
+
+    if (keyPressed === 'ArrowLeft' && player.x - 1 >= 0) {
+        console.log('Left');
+        player.x -= 1
     }
 }
 
